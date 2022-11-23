@@ -1,0 +1,173 @@
+.page-id-77 {
+    .section {
+        &--kim {
+            display: grid;
+            grid-template-columns: 7fr 5fr;
+            gap: opt(100);
+            padding-top: opt(100);
+
+            .mobile-show {
+                display: none;
+            }
+
+            .img {
+                .img-box {
+                    aspect-ratio: 1.33;
+                    width: 100%;
+                    background-size: cover;
+                    background-position: center center;
+                }
+                .text-box {
+                    width: 50%;
+                    background: rgba(0, 0, 0, 0.3);
+                    padding: opt(10);
+                    word-break: keep-all;
+                    backdrop-filter: blur(5px);
+                    padding-left: opt(30);
+                }
+            }
+            .text {
+                text-align: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                li {
+                    display: grid;
+                    grid-template-columns: opt(50) 1fr;
+                }
+            }
+            hr {
+                width: 100%;
+                margin-top: opt(20);
+                margin-bottom: opt(20);
+                border: 0;
+                border-top: 1px solid white;
+            }
+            .en {
+                line-height: 1.3;
+                margin-bottom: opt(5);
+            }
+        }
+
+        &--works {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            padding-top: opt(160);
+            padding-left: opt(60);
+            padding-right: opt(60);
+            padding-bottom: opt(50);
+            gap: opt(45);
+            .img {
+                aspect-ratio: 1;
+            }
+            .work {
+                cursor: zoom-in;
+
+                .img-caption {
+                    padding-top: opt(20);
+                }
+            }
+        }
+        &--copyright {
+            padding: 0 opt(60);
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    .zoom {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+        display: none;
+        padding: opt(30);
+        &__img {
+            width: 60%;
+            height: 100%;
+            width: 100%;
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+        }
+
+        &__exit {
+            width: opt(40);
+            height: opt(40);
+            position: absolute;
+            top: opt(40);
+            left: opt(40);
+            cursor: pointer;
+        }
+        .exit-left,
+        .exit-right {
+            height: 1px;
+            width: 100%;
+            background: white;
+            position: absolute;
+            top: 50%;
+        }
+
+        .exit-left {
+            transform: rotate(45deg);
+        }
+        .exit-right {
+            transform: rotate(135deg);
+        }
+    }
+}
+
+@include mobile() {
+    .page-id-77 {
+        .section {
+            &--kim {
+                padding-top: 0;
+                grid-template-columns: 1fr;
+                gap: 0;
+                .mobile-show {
+                    display: block;
+                    text-align: center;
+                    padding-top: opt(40);
+                    padding-bottom: opt(5);
+                }
+
+                .img {
+                    .text-box {
+                        padding-left: opt(20);
+                        font-size: opt(14);
+                        width: 100%;
+                    }
+                }
+            }
+
+            &--works {
+                padding: opt(20);
+                padding-top: 0;
+                grid-template-columns: 1fr;
+                gap: opt(20);
+                .work {
+                    .img-caption {
+                        padding-top: opt(10);
+                        text-align: center;
+                    }
+                }
+            }
+        }
+
+        .zoom {
+            padding: opt(20);
+            &__exit {
+                top: opt(16);
+                left: opt(16);
+                width: opt(30);
+                height: opt(30);
+            }
+        }
+    }
+}
